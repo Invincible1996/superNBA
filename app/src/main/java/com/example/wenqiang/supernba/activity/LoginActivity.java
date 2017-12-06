@@ -41,6 +41,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (view.getId()) {
             case R.id.iv_avtar:
                 Toast.makeText(this, "点击我更换头像", Toast.LENGTH_SHORT).show();
+
+
+
                 break;
             case R.id.btn_login:
                 //TODO:跳转至首页
