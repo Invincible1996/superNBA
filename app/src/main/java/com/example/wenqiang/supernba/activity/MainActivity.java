@@ -1,10 +1,11 @@
-package com.example.wenqiang.supernba;
+package com.example.wenqiang.supernba.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.wenqiang.supernba.R;
 
 public class MainActivity extends AppCompatActivity {
 
