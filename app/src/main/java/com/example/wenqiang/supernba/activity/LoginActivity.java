@@ -1,5 +1,6 @@
 package com.example.wenqiang.supernba.activity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btn_login:
                 //TODO:跳转至首页
-                Toast.makeText(this, "进入首页", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 break;
         }
     }
