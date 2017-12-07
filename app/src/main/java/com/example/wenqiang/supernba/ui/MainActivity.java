@@ -1,4 +1,4 @@
-package com.example.wenqiang.supernba.activity;
+package com.example.wenqiang.supernba.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
