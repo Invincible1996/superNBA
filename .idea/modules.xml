@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/super.iml" filepath="$PROJECT_DIR$/super.iml" />
+      <module fileurl="file://D:\ReactProject\FirstApp\superNBA\super.iml" filepath="D:\ReactProject\FirstApp\superNBA\super.iml" />
+      <module fileurl="file://$PROJECT_DIR$/superNBA.iml" filepath="$PROJECT_DIR$/superNBA.iml" />
     </modules>
   </component>
 </project>
