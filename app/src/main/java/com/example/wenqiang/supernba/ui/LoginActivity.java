@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.wenqiang.supernba.R;
 import com.example.wenqiang.supernba.presenter.LoginPresenter;
 import com.example.wenqiang.supernba.presenter.LoginPresenterIml;
+import com.example.wenqiang.supernba.utils.ToastUtil;
 
 import java.io.IOException;
 
@@ -73,6 +74,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String userName = mUsername.getText().toString().trim();
                 String passWord = mPassWord.getText().toString().trim();
 
+                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(passWord)) {
+                    ToastUtil.showToast("请输入用户名或密码");
+                    return;
+                }
+
                 //登录
                 mLoginPresenter.login(userName, passWord);
                 break;
@@ -81,18 +87,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void loginSuccess(String name, String passWord) {
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(passWord)) {
-            Toast.makeText(this, "请输入用户名或密码", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
 
         mProgressDialog = ProgressDialog.show(this, null, "正在登录...");
-        mHandler.sendEmptyMessageDelayed(0x110,1000);
+        mHandler.sendEmptyMessage(0x110);
     }
 
     @Override
     public void loginError(String errorMsg) {
 
-        Toast.makeText(this, errorMsg, Toast.LENGTH_SHORT).show();
+        ToastUtil.showToast(errorMsg);
     }
 }

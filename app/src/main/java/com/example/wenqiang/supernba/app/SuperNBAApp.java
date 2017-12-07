@@ -12,6 +12,7 @@ public class SuperNBAApp extends Application {
 
     @Override
     public void onCreate() {
-        sContext = getApplicationContext();
+        super.onCreate();
+        sContext = this;
     }
 }
