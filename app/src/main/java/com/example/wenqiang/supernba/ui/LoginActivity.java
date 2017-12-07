@@ -73,33 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String userName = mUsername.getText().toString().trim();
                 String passWord = mPassWord.getText().toString().trim();
 
-//                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(passWord)) {
-//                    Toast.makeText(this, "请输入用户名或密码.", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//
-//                String url = "https://japi.juhe.cn/joke/img/text.from?key=8aad35fd1e3384b259293e9f491cab5e&page=2&pagesize=20";
-//                mProgressDialog = ProgressDialog.show(this, null, "正在登录中...");
-//
-//                OkHttpClient okHttpClient = new OkHttpClient();
-//                Request request = new Request.Builder().url(url).build();
-//
-//                Call call = okHttpClient.newCall(request);
-//                call.enqueue(new Callback() {
-//
-//                    @Override
-//                    public void onResponse(Call call, Response response) throws IOException {
-//
-//                        String json = response.body().string();
-//
-//                        mHandler.sendEmptyMessage(0x110);
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call call, IOException e) {
-//
-//                    }
-//                });
+                //登录
                 mLoginPresenter.login(userName, passWord);
                 break;
         }
@@ -112,8 +86,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        mProgressDialog = ProgressDialog.show(this, null, "数据加载中...");
-        mHandler.sendEmptyMessageDelayed(0x110,100012);
+        mProgressDialog = ProgressDialog.show(this, null, "正在登录...");
+        mHandler.sendEmptyMessageDelayed(0x110,1000);
     }
 
     @Override
