@@ -2,8 +2,10 @@ package com.example.wenqiang.supernba.presenter;
 
 import android.app.ProgressDialog;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.example.wenqiang.supernba.net.HttpManager;
 import com.example.wenqiang.supernba.ui.LoginActivity;
 
 import java.io.IOException;
@@ -29,33 +31,24 @@ public class LoginPresenterIml implements LoginPresenter {
     @Override
     public void login(final String name, final String passWord) {
 
-        String url = "https://japi.juhe.cn/joke/img/text.from?key=8aad35fd1e3384b259293e9f491cab5e&page=2&pagesize=20";
-
-        OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url(url).build();
-
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
+        String url = "http://dev.zt.bnq.com.cn/bnq_owner/content/product/getProductDetail.do?prodId=10";
+        HttpManager.getInstance().doGet(url, new Callback() {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                if (response != null) {
 
-                String json = response.body().string();
+                    String json = response.body().string();
+                    Log.d("json", json);
 
-                mLoginActivity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mLoginActivity.loginSuccess(name, passWord);
-                    }
-                });
-
+                }
             }
 
             @Override
             public void onFailure(Call call, IOException e) {
-                mLoginActivity.loginError("登录失败");
-            }
-        });
 
+            }
+
+        });
     }
 }
