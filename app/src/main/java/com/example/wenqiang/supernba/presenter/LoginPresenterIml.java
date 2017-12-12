@@ -31,7 +31,7 @@ public class LoginPresenterIml implements LoginPresenter {
     @Override
     public void login(final String name, final String passWord) {
 
-        String url = "http://dev.zt.bnq.com.cn/bnq_owner/content/product/getProductDetail.do?prodId=10";
+        String url = "http://192.168.0.102:8080/MyServerDemo/loginCheck";
         HttpManager.getInstance().doGet(url, new Callback() {
 
             @Override
@@ -46,7 +46,7 @@ public class LoginPresenterIml implements LoginPresenter {
 
             @Override
             public void onFailure(Call call, IOException e) {
-
+                System.out.println(e.getMessage());
             }
 
         });

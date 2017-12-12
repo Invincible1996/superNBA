@@ -1,12 +1,9 @@
 package com.example.wenqiang.supernba.net;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -24,7 +21,7 @@ public class HttpManager {
 
     private HttpManager() {
         params = new HashMap<>();
-        mOkHttpClient=new OkHttpClient();
+        mOkHttpClient = new OkHttpClient();
         mOkHttpClient.newBuilder().connectTimeout(10, TimeUnit.SECONDS).build();
         mOkHttpClient.newBuilder().readTimeout(10, TimeUnit.SECONDS).build();
         mOkHttpClient.newBuilder().writeTimeout(30, TimeUnit.SECONDS).build();
@@ -52,11 +49,19 @@ public class HttpManager {
         return list;
     }
 
+    /**
+     * get请求无参数
+     * @param url
+     * @param callback
+     */
     public void doGet(String url, Callback callback) {
+
+        StringBuffer sb = new StringBuffer();
+        sb.append(url+"?");
+
         Request request = new Request.Builder().url(url).build();
         Call call = mOkHttpClient.newCall(request);
         call.enqueue(callback);
     }
-
 
 }
