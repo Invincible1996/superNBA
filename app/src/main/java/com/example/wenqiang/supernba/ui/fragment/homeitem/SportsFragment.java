@@ -10,10 +10,10 @@ import com.example.wenqiang.supernba.ui.fragment.BaseFragment;
  * Created by wenqiang on 2017/12/14.
  */
 
-public class TechnologyFragment extends BaseFragment {
+public class SportsFragment extends BaseFragment {
     @Override
     public View createView(LayoutInflater inflater) {
-        View view = inflater.inflate(R.layout.fragment_technology, null);
+        View view = inflater.inflate(R.layout.fragment_sports, null);
         return view;
     }
 

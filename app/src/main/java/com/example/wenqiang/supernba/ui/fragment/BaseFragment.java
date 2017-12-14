@@ -13,19 +13,17 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
     @Nullable
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getNetData();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return createView(inflater);
     }
 
-    public abstract View createView(LayoutInflater inflater);
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        getNetData();
+    }
+
+    public abstract View createView(LayoutInflater in);
 
     public abstract void getNetData();
 }

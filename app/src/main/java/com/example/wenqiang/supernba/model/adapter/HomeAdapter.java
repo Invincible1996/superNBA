@@ -37,4 +37,9 @@ public class HomeAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return mInfoList.get(position).getTitle();
     }
+
+    public void updateData(List<FragmentInfo> list) {
+        this.mInfoList = list;
+        this.notifyDataSetChanged();
+    }
 }
