@@ -34,6 +34,9 @@ public class HeadLineFragment extends BaseFragment {
 
     }
 
+    /**
+     * RecyclerView设置行间距
+     */
     class SpaceItemDecoration extends RecyclerView.ItemDecoration {
         int mSpace;
         @Override
