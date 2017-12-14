@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.selector_person};
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +51,28 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mFrgment_tab = (FragmentTabHost) findViewById(R.id.fragment);
         mToolbar = (Toolbar) findViewById(R.id.toobar);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         mToolbar.setTitle("首页");
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
-//        mToolbar.setNavigationIcon();
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, 0, 0) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+        };
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle); //设置侧滑监听
 
         mFrgment_tab.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 

@@ -8,7 +8,9 @@ import android.view.View;
 import com.example.wenqiang.supernba.R;
 import com.example.wenqiang.supernba.model.adapter.HomeAdapter;
 import com.example.wenqiang.supernba.model.bean.FragmentInfo;
+import com.example.wenqiang.supernba.ui.fragment.homeitem.FinanceFragment;
 import com.example.wenqiang.supernba.ui.fragment.homeitem.HeadLineFragment;
+import com.example.wenqiang.supernba.ui.fragment.homeitem.SportsFragment;
 import com.example.wenqiang.supernba.ui.fragment.homeitem.TechnologyFragment;
 
 import java.util.ArrayList;
@@ -45,8 +47,8 @@ public class HomeFragment extends BaseFragment {
 
         mInfoList.add(new FragmentInfo("头条", new HeadLineFragment()));
         mInfoList.add(new FragmentInfo("科技", new TechnologyFragment()));
-        mInfoList.add(new FragmentInfo("财经", new TechnologyFragment()));
-        mInfoList.add(new FragmentInfo("体育", new TechnologyFragment()));
+        mInfoList.add(new FragmentInfo("财经", new FinanceFragment()));
+        mInfoList.add(new FragmentInfo("体育", new SportsFragment()));
 
         mAdapter.updateData(mInfoList);
     }
