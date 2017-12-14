@@ -80,7 +80,7 @@ public class SplashActivity extends AppCompatActivity {
         mBtn_tohome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isLogin){
+                if (!isLogin){
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
                     finish();
                 }else {
