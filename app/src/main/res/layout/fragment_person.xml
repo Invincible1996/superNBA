@@ -6,34 +6,10 @@
     android:background="#0ff"
     android:padding="10dp">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_react"
+        android:text="打开ReactNative界面"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PersonFragment" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
