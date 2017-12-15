@@ -4,9 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#0ff"
+    android:gravity="center"
     android:padding="10dp">
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/btn_react"
         android:text="打开ReactNative界面"
         android:layout_width="wrap_content"
