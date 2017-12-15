@@ -27,8 +27,8 @@ public class PersonFragment extends BaseFragment {
         mBtn_react.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),MyReactActivity.class);
 
+                Intent intent = new Intent(getActivity(),MyReactActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 getActivity().startActivity(intent);
             }

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.example.wenqiang.supernba.BuildConfig;
+import com.example.wenqiang.supernba.react.TestReactPackage;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -27,7 +28,8 @@ public class SuperNBAApp extends Application implements ReactApplication {
         @Override
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
-                    new MainReactPackage()
+                    new MainReactPackage(),
+                    new TestReactPackage()
             );
         }
     };
