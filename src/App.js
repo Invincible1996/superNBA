@@ -3,7 +3,7 @@
  * 2017.12.15
  */
 import React, { Component, } from 'react'
-import { View, Text, Platform, Alert, StyleSheet, TouchableOpacity, AppRegistry, NativeModules } from 'react-native'
+import { View, Text, Platform, Alert, StyleSheet, TouchableOpacity, AppRegistry, NativeModules} from 'react-native'
 import { HeaderBackButton, HeaderTitle, NavigationActions } from 'react-navigation'
 let Close = NativeModules.test
 export default class App extends Component {
@@ -39,9 +39,10 @@ export default class App extends Component {
 
             <TouchableOpacity
                 onPress={() => this.back()}
-                style={{ backgroundColor: 'red', padding: 10, borderRadius: 5 }}>
-                <Text style={{ color: '#fff' }}>跳到Android原生界面</Text>
+                style={{ backgroundColor: '#0f0', padding: 10, borderRadius: 5 ,justifyContent:'center'}}>
+                <Text style={{ color: '#f00' }}>跳到Android原生界面</Text>
             </TouchableOpacity>
+
         </View>)
     }
 }
@@ -49,7 +50,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#0ff',
+        backgroundColor: '#ff9000',
         justifyContent: 'center',
         alignItems: 'center'
     }
